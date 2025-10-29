@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: white;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1.5fr 8.5fr;
+    grid-template-areas: "sidebar main";
+}
+
+#sidebar {
+    height: 100vh;
+    background-color: hsl(0, 0%, 90%);
+    grid-area: sidebar;
+}
+
+#main-area {
+    height: 100vh;
+    overflow-y: auto;
+    
+    grid-area: main;
+    display: grid;
+    padding: 20px 30px;
+    grid-template-rows: 1fr 1fr 2fr 2.5fr 3.5fr;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "content"
+    "section1"
+    "section2"
+    "section3"
+    "section4";
+    grid-row-gap: 20px;
+}
+
+#main-area-content {
+    font-size: 50px;
+    color: blue;
+    grid-area: content;
+}
+
+#section1 {
+    background-color: transparent;
+    grid-area: section1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    grid-template-areas: "sub-section1 sub-section2 sub-section3 sub-section4";
+    grid-column-gap: 20px;
+}
+
+#section2 {
+    background-color: transparent;
+    grid-area: section2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "sub-section1 sub-section2";
+    grid-column-gap: 40px;
+}
+
+#section3 {
+    background-color: transparent;
+    grid-area: section3;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "sub-section1 sub-section2";
+    grid-column-gap: 40px;
+}
+
+#section4 {
+    background-color: transparent;
+    grid-area: section4;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "sub-section1 sub-section2";
+    grid-column-gap: 40px;
+}
+
+#sub-section1 {
+    background-color: rgb(28, 224, 224);
+    grid-area: sub-section1;
+}
+
+#sub-section2 {
+    background-color: rgb(234, 145, 35);
+    grid-area: sub-section2;
+}
+
+#sub-section3 {
+    background-color: rgb(95, 224, 55);
+    grid-area: sub-section3;
+}
+
+#sub-section4 {
+    background-color: rgb(32, 232, 152);
+    grid-area: sub-section4;
+}

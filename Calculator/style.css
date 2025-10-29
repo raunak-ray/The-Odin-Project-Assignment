@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #222;
+    color: white;
+}
+
+#title {
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px 80px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(24, 50, 76);
+    width: 600px;
+    height: 650px;
+    margin: auto;
+}
+
+#display {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+#current-display {
+    flex: 1;
+    background-color: rgb(0, 0, 0);
+    font-size: 36px;
+    text-align: right;
+}
+
+#result {
+    flex: 1;
+    background-color: hsl(0, 0%, 30%);
+    font-size: 48px;
+    text-align: right;
+}
+
+#buttons {
+    display: flex;
+    flex: 5;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3;
+    background-color: rgb(19, 122, 122);
+}
+
+.numbersButton {
+    width: calc(100%/3);
+    height: calc(100%/5);
+    border: 1px solid white;
+    background-color: hsl(207, 30%, 52%);
+    font-size: 36px;
+    outline: none;
+    cursor: pointer;
+}
+
+#zero {
+    flex: 1;
+}
+
+#operators {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: black;
+}
+
+.operatorsButton {
+    width: 100%;
+    height: 20%;
+    font-size: 48px;
+    background-color: hsl(223, 30%, 42%);
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+}
+
+#equal {
+    background-color: pink;
+}

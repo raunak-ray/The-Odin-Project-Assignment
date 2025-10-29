@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: hsl(198, 52%, 19%);
+    color: #fff;
+    font-family:sans-serif;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.hero h1 {
+    font-size: 75px;
+    font-weight: 700;
+    color: hsl(152, 94%, 50%);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 36px;
+    font-weight: 400;
+    color: hsl(0, 0%, 42%);
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 80px;
+    margin-top: -30px;
+}
+
+.scoreCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.scoreCard div {
+    width: 200px;
+    height: 150px;
+    background-color: hsla(198, 52%, 39%, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    row-gap: 20px;
+}
+
+#yourScore, #computerScore{
+    font-size: 56px;
+    font-weight: 600;
+    color: rgb(207, 213, 13);
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.result h4 {
+    font-size: 42px;
+    font-weight: 600;
+    color: rgb(237, 226, 9);
+}
+
+#choose {
+    text-align: center;
+    font-size: 55px;
+    color: rgb(215, 183, 24);
+    margin-bottom: 20px;
+}
+
+.possibleMoves {
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100vw;
+}
+
+.possibleMoves .card {
+    width: 400px;
+    height: 200px;
+    background-color: hsla(198, 31%, 25%, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    border-radius: 20px;
+}
+
+.possibleMoves .card h1 {
+    font-size: 68px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Library</h1>
+    <button id="addBook">Add New Book</button>
+  </main>
+
+  <dialog>
+    <form method="dialog">
+      <div>
+        <label for="title">Title:*</label>
+        <input type="text" name="title" id="inputTitle" required />
+      </div>
+      <div>
+        <label for="author">Author:*</label>
+        <input type="text" name="author" id="inputAuthor" required />
+      </div>
+      <div>
+        <label for="totalPages">Total Pages:*</label>
+        <input type="number" name="totalPages" id="inputTotalPages" required />
+      </div>
+      <fieldset class="radio-group">
+        <legend>Read Status:*</legend>
+        <label>
+          <input type="radio" name="isReaded" value="true" checked />
+          Read
+        </label>
+        <label>
+          <input type="radio" name="isReaded" value="false" />
+          Not Read
+        </label>
+      </fieldset>
+      <button type="submit" id="submitForm">Submit</button>
+      <button type="button" id="cancel">Cancel</button>
+    </form>
+  </dialog>
+
+  <div id="container">
+    <!-- cards will be generated dynamically here -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

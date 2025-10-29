@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #152338;
+    z-index: 10;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+}
+
+.logoImage {
+    width: 60px;
+    height: 60px;
+    margin-right: auto;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 600px;
+    align-self: center;
+}
+
+.links a {
+    font-size: 24px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #1f2937;
+    padding-bottom: 40px;
+    gap: 30px;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.content h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.heroImage {
+    flex: 1;
+    width: 50%;
+    height: 70%;
+    border: none;
+    border-radius: 20px;
+}
+
+.about {
+    background-color: #203a2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 80px;
+    gap: 30px;
+    height: 90vh;
+}
+
+.aboutContent {
+    flex: 1;
+}
+
+.about .aboutContent h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about .aboutContent p {
+    font-size: 24px;
+    line-height: 1.7;
+}
+
+.aboutImage {
+    flex: 1;
+    width: 50%;
+    height: 90%;
+    border-radius: 20px;
+}
+
+.weapon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px 80px;
+    gap: 30px;
+    background-color: #101f36;
+    
+    height: 90vh;
+}
+
+.card {
+    width: 30%;
+    background-color: #162335;
+    padding: 20px 30px;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #20334e;
+}
+.card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.card h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#gungnirImg {
+    object-fit:cover;
+    object-position: top center;
+}
+
+.quote {
+    height: 50vh;
+    background-color: rgb(38, 82, 61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quoteCard {
+    width: 50%;
+    background-color: #1b3f30;
+    padding: 30px 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quoteCard p {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.quoteCard span {
+    align-self: flex-end;
+    font-size: 25px;
+    font-weight: 600;
+    color: yellow;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101f36;
+}
+
+footer p, 
+footer span {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+footer span {
+    color: yellow;
+}

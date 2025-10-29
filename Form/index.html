@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Coffee Registration Form</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="bg-img"></div>
+      <div class="form-content">
+        <form action="" method="post">
+          <h1>Join Our Coffee Club</h1>
+
+          <fieldset id="basicDetails">
+            <h2>Basic Details</h2>
+            <div class="input-container">
+              <div class="form-inputs">
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  placeholder=" "
+                  required
+                />
+                <label for="firstName">First Name*</label>
+              </div>
+
+              <div class="form-inputs">
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder=" "
+                  required
+                />
+                <label for="lastName">Last Name*</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="contactDetails">
+            <h2>Contact Details</h2>
+            <div class="input-container">
+              <div class="form-inputs">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder=" "
+                  required
+                />
+                <label for="email">Email Address*</label>
+                <small class="hint">Format: example@coffee.com</small>
+              </div>
+
+              <div class="form-inputs">
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder=" "
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                  minlength="10"
+                  required
+                />
+                <label for="phoneNumber">Phone Number*</label>
+                <small class="hint">Format: 10 digits only</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" id="submitButton">Brew My Account</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
