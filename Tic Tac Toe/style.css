@@ -1,3 +1,321 @@
+/* ===========================
+   Global Reset and Base Styles
+   =========================== */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    background-color: black;
+    background-color: #0f0f0f; /* Deep neutral black */
+    color: #e6ffe6; /* Light greenish-white text */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ===========================
+   Main Layout
+   =========================== */
+main {
+    text-align: center;
+    padding: 30px 40px;
+}
+
+main > h1 {
+    color: #00ff88; /* Bright neon green accent */
+    font-size: 66px;
+    font-weight: 800;
+}
+
+main > p {
+    color: #7fffd4; /* Aqua accent for contrast */
+    font-size: 35px;
+    font-weight: 400;
+}
+
+/* ===========================
+   Setup Screen (Game Setup Form)
+   =========================== */
+.setup-screen {
+    width: 50vw;
+    height: 70vh;
+    margin: auto;
+    background-color: #1a1f1a;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1f261f;
+}
+
+.setup-screen form {
+    padding: 20px 40px;
+}
+
+form > h2 {
+    font-size: 36px;
+    color: #ffea00; /* Soft yellow highlight */
+    text-align: center;
+}
+
+/* Input container */
+#formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#formContainer > div {
+    background-color: rgba(74, 99, 82, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 15px 30px;
+}
+
+/* ===========================
+   Input Fields
+   =========================== */
+#formContainer input {
+    padding: 10px 15px;
+    color: #111;
+    background-color: #dfe6df;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+#formContainer input:focus {
+    border-color: #00ff88;
+    background-color: #f2fff7;
+    outline: none;
+}
+
+/* Input labels */
+#formContainer label {
+    font-size: 28px;
+    color: #a8ffb3;
+}
+
+/* Dropdown menu */
+select {
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #dfe6df;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    font-size: 16px;
+}
+
+select:focus {
+    border-color: #00ff88;
+    outline: none;
+}
+
+/* ===========================
+   Start Game Button
+   =========================== */
+#startGame {
+    padding: 12px 20px;
+    font-size: 24px;
+    color: #0f0f0f;
+    background-color: #00ff88;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form > div {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#startGame:hover {
+    background-color: #66ffb2;
+}
+
+/* ===========================
+   Game Screen (Board & Buttons)
+   =========================== */
+.game-screen {
+    width: 40vw;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: -30px;
+    background-color: #161916;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    border: 1px solid #222822;
+}
+
+.game-screen > button {
+    padding: 10px 15px;
+    font-size: 24px;
+    background-color: #00ff88;
+    color: #0f0f0f;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.game-screen > button:hover {
+    background-color: #66ffb2;
+}
+
+/* ===========================
+   Tic-Tac-Toe Grid
+   =========================== */
+#gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    aspect-ratio: 1 / 1;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+.cell {
+    background-color: #1e271e;
+    width: 100%;
+    height: 100%;
+    color: #00ff88;
+    font-size: 60px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #00ff88;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cell:hover {
+    background-color: #273227;
+}
+
+/* Rounded grid corners */
+#gridContainer :nth-child(1) { border-top-left-radius: 15px; }
+#gridContainer :nth-child(3) { border-top-right-radius: 15px; }
+#gridContainer :nth-child(7) { border-bottom-left-radius: 15px; }
+#gridContainer :nth-child(9) { border-bottom-right-radius: 15px; }
+
+/* ===========================
+   Hidden Utility
+   =========================== */
+.hidden {
+    display: none;
+}
+
+/* ===========================
+   Content Section (Winner Screen)
+   =========================== */
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+#content > h4 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #00ff88;
+}
+
+#content > button {
+    font-size: 22px;
+    padding: 10px 20px;
+    background-color: #00ff88;
+    color: #0f0f0f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#content > button:hover {
+    background-color: #66ffb2;
+}
+
+/* ===========================
+   Dialog (End Game Popup)
+   =========================== */
+dialog {
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background-color: #1a1d1a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#dialogContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+dialog h1 {
+    font-size: 66px;
+    color: #00ff88;
+}
+
+/* ===========================
+   Dialog Buttons
+   =========================== */
+.dialogButton {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.dialogButton > button {
+    font-size: 36px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    color: #0f0f0f;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Close dialog button */
+#closeDialog {
+    background-color: #ff4d4d;
+}
+
+#closeDialog:hover {
+    background-color: #ff7373;
+}
+
+/* Play again button */
+#playAgain {
+    background-color: #00ff88;
+}
+
+#playAgain:hover {
+    background-color: #66ffb2;
 }

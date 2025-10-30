@@ -1,60 +1,120 @@
+// ===========================
+// Main Game Controller
+// Handles setup, user interaction, and game flow
+// ===========================
 import Board from "./board.js";
 import Player from "./player.js";
 import checkWinner from "./winner.js";
 import checkDraw from "./draw.js";
 
-// show initial empty board
-console.log(Board.boardCells);
-Board.showBoard();
+// -------- DOM References --------
+const cells = document.querySelectorAll(".cell");
+const dialog = document.querySelector("dialog");
+const winner = document.querySelector("#winner");
+const closeDialog = document.querySelector("#closeDialog");
+const restartPlay = document.querySelector("#playAgain");
+const playerTurn = document.querySelector("#player-turns");
+const form = document.querySelector("#playerForm");
+const setupScreen = document.querySelector(".setup-screen");
+const gameScreen = document.querySelector(".game-screen");
+const startGame = document.querySelector("#startGame");
+const backToSetup = document.querySelector("#backToSetup");
 
-// create players
-const player1 = new Player("Raunak", "X");
-const player2 = new Player("Rimuru", "O");
-player1.showPlayerInfo();
-
-// track whose turn it is
+// -------- Player Setup --------
+let player1 = new Player("Player 1", "❌");
+let player2 = new Player("Player 2", "⭕");
 let currentPlayer = player1;
 
-// handle a single player move
-function playerMove(moveIndex) {
-  const [row, col] = moveIndex.map(Number);
-  console.log(row, col);
+// -------- Navigation Controls --------
+backToSetup.addEventListener("click", () => {
+  setupScreen.classList.remove("hidden");
+  gameScreen.classList.add("hidden");
+});
 
-  // prevent overwriting an already filled cell
-  if (Board.boardCells[row][col] !== " ") {
-    console.log("Cell already taken");
-    return false;
-  }
+startGame.addEventListener("click", (event) => {
+  event.preventDefault();
 
-  // update board with current player's move
-  Board.boardCells[row][col] = currentPlayer.pointer;
-  Board.showBoard();
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
 
-  // check winner
-  if (checkWinner(currentPlayer)) {
-    console.log(currentPlayer.name, "wins the game");
-    return true; // stop the game
-  }
+  setPlayers(data);
+  currentPlayer = player1;
 
-  // check draw
-  if (checkDraw()) {
-    console.log("It's a draw");
-    return true; // stop the game
-  }
+  playerTurn.innerText = `${currentPlayer.name}'s Turn`;
+  setupScreen.classList.add("hidden");
+  gameScreen.classList.remove("hidden");
+});
 
-  // switch turn between players
-  currentPlayer = currentPlayer === player1 ? player2 : player1;
-  return false; // game continues
+// -------- Dialog Buttons --------
+closeDialog.addEventListener("click", () => {
+  dialog.close();
+  resetGame();
+});
+
+restartPlay.addEventListener("click", () => {
+  resetGame();
+  dialog.close();
+});
+
+// -------- Helper Functions --------
+function resetGame() {
+  Board.clearBoard();
+  clearGUIBoard();
 }
 
-// main game loop with user prompts
-// keeps running until someone wins or the game draws
-for (let i = 0; i < 9; i++) {
-  const moveCoordinate = window.prompt(`${currentPlayer.name}'s move (row col):`);
-  if (!moveCoordinate) break; // stop if user cancels prompt
+function clearGUIBoard() {
+  cells.forEach((cell) => (cell.innerText = ""));
+}
 
-  const moveArray = moveCoordinate.split(" ").map(Number);
-  const gameEnded = playerMove(moveArray);
+// -------- Initialize Empty Board --------
+Board.showBoard();
 
-  if (gameEnded) break; // exit loop if winner or draw
+// -------- Create Player Objects --------
+function setPlayers(data) {
+  const p1 = data.player1Name?.trim() || "Player 1";
+  const p2 = data.player2Name?.trim() || "Player 2";
+  const p1Pointer = data.player1Pointer || "❌";
+  const p2Pointer = data.player2Pointer || "⭕";
+
+  player1 = new Player(p1, p1Pointer);
+  player2 = new Player(p2, p2Pointer);
+
+  console.log("Player 1:", player1.showPlayerInfo());
+  console.log("Player 2:", player2.showPlayerInfo());
+}
+
+// -------- Game Logic: Player Moves --------
+cells.forEach((cell) => {
+  cell.addEventListener("click", (event) => {
+    const moveCoord = event.target.getAttribute("data-value");
+    const [row, col] = moveCoord.split(" ").map(Number);
+    handleMove(row, col, cell);
+  });
+});
+
+function handleMove(row, col, cellRef) {
+  // Prevent overwriting existing cell
+  if (Board.boardCells[row][col] !== " ") return;
+
+  // Record current player's move
+  Board.boardCells[row][col] = currentPlayer.pointer;
+  cellRef.innerText = currentPlayer.pointer;
+
+  // Check for win
+  if (checkWinner(currentPlayer)) {
+    winner.innerText = `${currentPlayer.name} wins the game! 🎉`;
+    dialog.showModal();
+    return;
+  }
+
+  // Check for draw
+  if (checkDraw()) {
+    winner.innerText = `It's a draw 🤝`;
+    dialog.showModal();
+    return;
+  }
+
+  // Switch player turns
+  currentPlayer = currentPlayer === player1 ? player2 : player1;
+  playerTurn.innerText = `${currentPlayer.name}'s Turn`;
 }

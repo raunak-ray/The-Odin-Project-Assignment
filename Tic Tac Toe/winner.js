@@ -1,50 +1,41 @@
+// ===========================
+// Winner Checker Module
+// Checks whether the current player has won the game
+// ===========================
+
 import Board from "./board.js";
 
-// check if the given player has won the game
 function checkWinner(player) {
-  const currentBoardCells = Board.boardCells;
+  const board = Board.boardCells;
+  const mark = player.pointer; // Current player's symbol (❌ or ⭕)
 
-  // check rows and columns
+  // ----- Check Rows & Columns -----
   for (let i = 0; i < 3; i++) {
-    let isRowWinner = true;
-    let isColumnWinner = true;
+    let rowWin = true;
+    let colWin = true;
 
     for (let j = 0; j < 3; j++) {
-      // check all cells in a row
-      if (currentBoardCells[i][j] !== player.pointer) {
-        isRowWinner = false;
-      }
-      // check all cells in a column
-      if (currentBoardCells[j][i] !== player.pointer) {
-        isColumnWinner = false;
-      }
+      // Check each row cell
+      if (board[i][j] !== mark) rowWin = false;
+
+      // Check each column cell
+      if (board[j][i] !== mark) colWin = false;
     }
 
-    // return true if any row or column has all same pointers
-    if (isRowWinner || isColumnWinner) {
-      return true;
-    }
+    // Return early if player wins by row or column
+    if (rowWin || colWin) return true;
   }
 
-  // check left diagonal
-  if (
-    currentBoardCells[0][0] === player.pointer &&
-    currentBoardCells[1][1] === player.pointer &&
-    currentBoardCells[2][2] === player.pointer
-  ) {
-    return true;
-  }
+  // ----- Check Diagonals -----
+  const leftDiagWin =
+    board[0][0] === mark && board[1][1] === mark && board[2][2] === mark;
 
-  // check right diagonal
-  if (
-    currentBoardCells[0][2] === player.pointer &&
-    currentBoardCells[1][1] === player.pointer &&
-    currentBoardCells[2][0] === player.pointer
-  ) {
-    return true;
-  }
+  const rightDiagWin =
+    board[0][2] === mark && board[1][1] === mark && board[2][0] === mark;
 
-  // no winning condition met
+  if (leftDiagWin || rightDiagWin) return true;
+
+  // ----- No Win Found -----
   return false;
 }
 

@@ -1,11 +1,12 @@
+// ===========================
+// Draw Checker
+// Determines if all cells are filled with no winner
+// ===========================
 import Board from "./board.js";
 
-// check if the board is full and there are no empty cells
 function checkDraw() {
-  const allMoves = Board.boardCells.flat();
-
-  // return true if no empty spaces remain
-  return !allMoves.includes(" ");
+  const allMoves = Board.boardCells.flat(); // Flatten 2D array
+  return !allMoves.includes(" "); // Return true if no empty spaces remain
 }
 
 export default checkDraw;
