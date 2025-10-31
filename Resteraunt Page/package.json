@@ -1,0 +1,27 @@
+{
+  "name": "resteraunt-page",
+  "version": "1.0.0",
+  "description": "a resteraunt page build using only js and bundle using webpack",
+  "keywords": [
+    "js",
+    "bundle",
+    "webpack"
+  ],
+  "license": "ISC",
+  "author": "Raunak Ray",
+  "type": "module",
+  "main": "bundle.js",
+  "scripts": {
+    "build": "npx webpack",
+    "dev": "npx webpack serve"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
