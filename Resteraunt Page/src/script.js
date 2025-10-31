@@ -3,6 +3,17 @@ import nav from "./nav.js";
 
 //ref
 const header = document.querySelector("header");
+const contentImages = document.querySelector("#homeContentImages")
+const heroImage = document.querySelector("#heroImage")
+const childContentImages = contentImages.childNodes;
+
+childContentImages.forEach((image) => {
+    image.addEventListener("click", () => {
+        console.log(image.getAttribute("src"))
+        const imageSrc = image.getAttribute("src");
+        heroImage.src = imageSrc
+    })
+})
 
 header.appendChild(nav);
 
