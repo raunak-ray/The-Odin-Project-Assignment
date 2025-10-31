@@ -8,17 +8,25 @@ const shop = document.createElement("button");
 
 //add text
 home.innerText = "Home";
-home.classList = "active"
+home.classList = "active";
 menu.innerText = "Menu";
-menu.classList = ""
+menu.classList = "";
 about.innerText = "About";
-about.classList = ""
+about.classList = "";
 shop.innerText = "Shop";
-shop.classList = ""
+shop.classList = "";
 
-nav.appendChild(home);
-nav.appendChild(menu);
-nav.appendChild(about);
-nav.appendChild(shop);
+nav.append(home, menu, about, shop);
+
+//event listener for nav
+const childList = nav.childNodes;
+childList.forEach((child) => {
+  child.addEventListener("click", () => {
+    const currentActive = document.querySelector(".active");
+    currentActive ? currentActive.classList.remove("active") : null;
+    child.classList = "active";
+    console.log(child);
+  });
+});
 
 export default nav;
