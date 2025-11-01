@@ -1,32 +1,40 @@
-//take ref
+// ---------------- CREATE NAVIGATION BAR ----------------
 
+// Create nav container and buttons
 const nav = document.createElement("nav");
 const home = document.createElement("button");
 const menu = document.createElement("button");
 const about = document.createElement("button");
 const shop = document.createElement("button");
 
-//add text
+// Add text to buttons
 home.innerText = "Home";
-home.classList = "active";
 menu.innerText = "Menu";
-menu.classList = "";
 about.innerText = "About";
-about.classList = "";
 shop.innerText = "Shop";
-shop.classList = "";
 
+// Set default active page
+home.classList = "active";
+
+// Add all buttons to the nav element
 nav.append(home, menu, about, shop);
 
-//event listener for nav
-const childList = nav.childNodes;
-childList.forEach((child) => {
+// ---------------- EVENT LISTENERS ----------------
+
+// Toggle 'active' class on nav button click
+nav.childNodes.forEach((child) => {
   child.addEventListener("click", () => {
+    // Remove current active class (if any)
     const currentActive = document.querySelector(".active");
-    currentActive ? currentActive.classList.remove("active") : null;
+    if (currentActive) currentActive.classList.remove("active");
+
+    // Set clicked button as active
     child.classList = "active";
-    console.log(child);
+
+    // Debugging log
+    console.log(`${child.innerText} clicked`);
   });
 });
 
+// Export navigation element for use in main script
 export default nav;

@@ -1,153 +1,168 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap');
 
+/* Reset default browser padding/margin */
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
+/* Remove underline from links */
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
+/* Body styling */
 body {
-    background-color: #12372A;
-    color: #FBFADA;
+  background-color: #12372A;
+  color: #FBFADA;
 }
 
-/* nav */
+/* ---------------- NAVIGATION BAR ---------------- */
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 80px;
-    align-items: center;
-    height: 10vh;
-    width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  height: 10vh;
+  width: 100vw;
 }
 
+/* Navigation container */
 nav {
-    flex: 9;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
+  flex: 9;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
 }
 
+/* Logo text */
 #logo {
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 0.5ch;
-    font-weight: 700;
-    flex: 1;
-    font-size: 36px;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.5ch;
+  font-weight: 700;
+  flex: 1;
+  font-size: 36px;
 }
 
+/* Nav buttons */
 nav > button {
-    font-family: "Sansita Swashed", sans-serif;
-    background: none;
-    color: rgb(225, 220, 220);
-    outline: none;
-    border: none;
-    font-size: 24px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+  font-family: "Sansita Swashed", sans-serif;
+  background: none;
+  color: rgb(225, 220, 220);
+  outline: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
+/* Hover effect */
 nav > button:hover {
-    color: rgb(255, 200, 0);
+  color: rgb(255, 200, 0);
 }
 
+/* Active nav link style */
 .active {
-    color: rgb(255, 200, 0);
+  color: rgb(255, 200, 0);
 }
 
-/* home page */
+/* ---------------- HOME PAGE ---------------- */
 .home {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    height: 90vh;
-    padding: 10px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  padding: 10px 80px;
 }
 
+/* Left content section */
 .homeContent {
-    flex: 1;
-    /* border: 1px solid white; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    
-    height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
 }
 
+/* Text container */
 #homeContentText {
-    flex: 4;
-    /* border: 1px solid white; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
+/* Title text */
 #homeContentText > h2 {
-    font-size: 110px;
-    font-weight: 600;
-    font-family: "Sansita Swashed", sans-serif;
+  font-size: 110px;
+  font-weight: 600;
+  font-family: "Sansita Swashed", sans-serif;
 }
 
+/* Subtitle text */
 #homeContentText > h4 {
-    margin-top: 100px;
-    font-size: 50px;
-    letter-spacing: 0.2ch;
-    color: #fbfada7d;
-    text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: -25px;
+  margin-top: 100px;
+  font-size: 50px;
+  letter-spacing: 0.2ch;
+  color: #fbfada7d;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: -25px;
 }
 
+/* Description text */
 #homeContentText > p {
-    font-size: 20px;
-    letter-spacing: 0.2ch;
-    color: #fbfadabd;
-    text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 10px;
+  font-size: 20px;
+  letter-spacing: 0.2ch;
+  color: #fbfadabd;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 10px;
 }
 
+/* Small food image gallery */
 #homeContentImages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 20px 80px;
-    flex: 1;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 80px;
+  flex: 1;
 }
 
+/* Each gallery image */
 #homeContentImages img {
-    width: 25%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 20px;
+  width: 25%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
+/* Right hero image section */
 .heroImageContainer {
-    flex: 1;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 1px solid white; */
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Large hero image */
 #heroImage {
-    width: 680px;
-    height: 650px;
-    aspect-ratio: 1 / 1;
-    border-radius: 20px;
-    object-fit: cover;
+  width: 680px;
+  height: 650px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: all 0.2s ease-in-out;
 }
