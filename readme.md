@@ -16,6 +16,7 @@ Each project focuses on practicing core web development concepts.
 | Recipe Finder | <a href="https://raunak-ray.github.io/The-Odin-Project-Assignment/Reciepe%20Finder/" target="_blank">Open ↗</a> |
 | Rock Paper Scissor | <a href="https://raunak-ray.github.io/The-Odin-Project-Assignment/Rock%20Paper%20Scissor/" target="_blank">Open ↗</a> |
 | Tic Tac Toe | <a href="https://raunak-ray.github.io/The-Odin-Project-Assignment/Tic%20Tac%20Toe/" target="_blank">Open ↗</a> |
+| Resteraunt Page | <a href="https://raunak-ray.github.io/The-Odin-Project-Assignment/Resteraunt%20Page/dist" target="_blank">Open ↗</a> |
 
 ---
 
