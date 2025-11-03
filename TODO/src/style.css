@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #eee;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    height: 100vh;
+    grid-template-areas: "sidebar content";
+}
+
+#sidebar {
+    background-color: rgb(96, 77, 40);
+    box-shadow: 5px 10px 10px rgba(48, 47, 47, 0.429);
+    width: 100%;
+    height: 100%;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 30px;
+}
+
+#classification {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#classification > h4,
+#project > h4 {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#classification > h4:hover,
+#project > h4:hover {
+    background-color: rgba(180, 146, 78, 0.53);
+}
+
+#classification > h1,
+#project > h1 {
+    font-size: 40px;
+    color: rgb(255, 170, 0);
+    cursor: pointer;
+}
+
+#project {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#newProject {
+    background-color: rgba(198, 170, 115, 0.434);
+    color: rgb(255, 212, 131);
+    font-weight: 900;
+    font-size: 20px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#newProject:hover {
+    background-color: rgba(168, 123, 34, 0.434);
+}
+
+
+#content {
+    background-color: rgb(207, 192, 164);
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    grid-area: content;
+}
