@@ -39,9 +39,24 @@ body {
 }
 
 #classification > h4,
-#project > h4 {
+#project > div > h4 {
     font-size: 24px;
     cursor: pointer;
+}
+
+
+#classification > h4,
+#project > div > h4.active {
+    color: rgb(255, 218, 151);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+}
+
+#projectContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0;
 }
 
 #classification > h4:hover,
@@ -150,3 +165,4 @@ form div > select {
     border-radius: 8px;
     font-size: 18px;
 }
+
