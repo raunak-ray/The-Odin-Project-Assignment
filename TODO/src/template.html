@@ -20,7 +20,34 @@
             <h4>Demo</h4>
         </div>
       </div>
-      <div id="content"></div>
+      <div id="content">
+        <button id="addTODO">Add TODO</button>
+        <dialog>
+            <form action="" method="dialog">
+                <div>
+                    <label for="title">Title:* </label>
+                    <input type="text" name="title" placeholder="">
+                </div>
+                <div>
+                    <label for="description">Description: </label>
+                    <input type="text" name="description" placeholder="">
+                </div>
+                <div>
+                    <label for="dueDate">Due Date:* </label>
+                    <input type="date" name="dueDate" placeholder="">
+                </div>
+                <div>
+                    <label for="priority">Priority:* </label>
+                    <select name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit">Create TODO</button>
+            </form>
+        </dialog>
+      </div>
     </div>
   </body>
 </html>

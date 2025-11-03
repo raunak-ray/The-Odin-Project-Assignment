@@ -86,4 +86,67 @@ body {
     min-height: 100%;
     height: auto;
     grid-area: content;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 80px;
+}
+
+#addTODO, #submit {
+    background-color: rgb(217, 155, 41);
+    padding: 10px 15px;
+    width: 250px;
+    align-self: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(43, 28, 1);;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#addTODO:hover {
+    background-color: rgba(243, 194, 105, 0.971);
+}
+
+dialog {
+    margin: auto auto;
+    padding: 30px 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(48, 37, 16, 0.53);
+    /* backdrop-filter: blur(25px); */
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+form div > label {
+    font-size: 28px;
+    color: rgb(255, 200, 98);
+}
+
+form div > input,
+form div > select {
+    padding: 10px 10px;
+    background-color: rgb(205, 205, 205);
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 18px;
 }

@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO</title>
-<script defer src="bundle.f7302ce98b125e0f61df.js"></script></head>
-<body>
-    
-</body>
+  <script defer src="bundle.cdb73c44ec6ea484042d.js"></script></head>
+  <body>
+    <div id="container">
+      <div id="sidebar">
+        <div id="classification">
+            <h1>Classification</h1>
+            <h4>Today</h4>
+            <h4>Tommorow</h4>
+            <h4>Completed</h4>
+        </div>
+        <div id="project">
+            <h1>Project</h1>
+            <button id="newProject">Add New Project</button>
+            <h4>Demo</h4>
+        </div>
+      </div>
+      <div id="content">
+        <button id="addTODO">Add TODO</button>
+        <dialog>
+            <form action="" method="dialog">
+                <div>
+                    <label for="title">Title:* </label>
+                    <input type="text" name="title" placeholder="">
+                </div>
+                <div>
+                    <label for="description">Description: </label>
+                    <input type="text" name="description" placeholder="">
+                </div>
+                <div>
+                    <label for="dueDate">Due Date:* </label>
+                    <input type="date" name="dueDate" placeholder="">
+                </div>
+                <div>
+                    <label for="priority">Priority:* </label>
+                    <select name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit">Create TODO</button>
+            </form>
+        </dialog>
+      </div>
+    </div>
+  </body>
 </html>

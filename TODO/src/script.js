@@ -1,27 +1,55 @@
 import "./style.css";
 import TODO from "./todo.js";
 import Project from "./project.js";
+import createTODO from "./createTODO.js";
+import appendTODO from "./appendTODO.js";
 
-const project1 = new Project("demo");
+const addTODO = document.querySelector("#addTODO");
+const dialog = document.querySelector("dialog");
+// const submit = document.querySelector("#submit");
+const project = new Project("Demo");
 
-const task1 = new TODO(
-  "complete os",
-  "complete os till ca4",
-  "05/11/2025",
-  "high"
-);
-const task2 = new TODO(
-  "complete se",
-  "complete se till ca4",
-  "07/11/2025",
-  "medium"
-);
+addTODO.addEventListener("click", (event) => {
+  dialog.showModal();
+  const form = dialog.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const title = formData.get("title");
+    const description = formData.get("description") || "No Description Given";
+    const priority = formData.get("priority");
+    const dueDate = formData.get("dueDate");
+    const todo = createTODO(title, description, priority, dueDate);
+    appendTODO(project, todo);
+    console.log(project.getTodo());
+    dialog.close();
+  });
+});
 
-project1.addTodo(task1);
-project1.addTodo(task2);
-console.log(project1.getTodo());
+// submit.addEventListener("click", (event) => {
+//   event.preventDefault()
+//   const formData = new FormData(form)
+//   console.log(formData);
 
+//   dialog.close();
+// })
+// const project1 = new Project("demo");
 
-for (const { title, description, dueDate, priority } of project1.getTodo()) {
-    console.log(`${title} - ${priority} priority (Due: ${dueDate})`);
-  }
+// const todo1 = new TODO({
+//   title: "Complete DSA",
+//   dueDate: "2025/11/10",
+//   priority: "high",
+// });
+// const todo2 = new TODO({
+//   title: "Read OS chapter",
+//   description: "Memory management",
+//   priority: "medium",
+// });
+
+// project1.addTodo(todo1);
+// project1.addTodo(todo2);
+// console.log(project1.getTodo());
+
+// for (const { title, description, dueDate, priority } of project1.getTodo()) {
+//   console.log(`${title} - ${priority} priority (Due: ${dueDate})`);
+// }
