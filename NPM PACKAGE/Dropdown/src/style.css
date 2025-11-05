@@ -1,0 +1,121 @@
+/* -------------------- */
+/* 🧩 Global Reset + Body */
+/* -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+/* -------------------- */
+/* 🧭 Navbar Container */
+/* -------------------- */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  align-items: center;
+  padding: 20px 80px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* -------------------- */
+/* 🔗 Navbar Links */
+/* -------------------- */
+a {
+  text-decoration: none;
+  color: aqua;
+  transition: color 0.3s ease;
+}
+
+nav > div {
+  position: relative;
+}
+
+nav div > a {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav div > a:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #fff;
+}
+
+nav div > a::after {
+  content: " ⬇";
+  font-size: 18px;
+  color: #888;
+  transition: transform 0.3s ease;
+}
+
+nav div > a:hover::after {
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+/* -------------------- */
+/* 📋 Dropdown Menu */
+/* -------------------- */
+.dropdown {
+  background: linear-gradient(145deg, rgb(27, 68, 25), rgb(18, 48, 17));
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+
+  /* animation base state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+/* -------------------- */
+/* 🪄 Dropdown Items */
+/* -------------------- */
+.dropdown p {
+  font-size: 18px;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown p:hover {
+  background-color: rgba(5, 203, 38, 0.15);
+  transform: translateX(4px);
+}
+
+/* -------------------- */
+/* ✨ Visible Dropdown */
+/* -------------------- */
+.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
