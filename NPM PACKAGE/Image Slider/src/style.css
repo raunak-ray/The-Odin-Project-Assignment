@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 20px 80px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 58px;
+}
+
+#container {
+    background-color: rgba(87, 87, 87, 0.5);
+    padding: 40px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    width: 50%;
+    height: auto;
+    margin: 50px auto;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#container button {
+    font-size: 50px;
+    background: rgb(173, 173, 155);
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+    border: none;
+    outline: none;
+}
+
+#container button:hover {
+    background: rgb(237, 105, 105);
+}
+
+#smallContainer {
+    width: 50vh;
+    padding: 10px 20px;
+    background-color: rgb(66, 86, 61);
+    border-radius: 10px;
+    margin: auto;
+    transition: all 0.25s ease;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+
+#navigation {
+    background-color: rgb(136, 61, 61);
+    width: auto;
+    padding: 10px 10px;
+    border-radius: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#navigation div {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(234, 213, 213);
+    border-radius: 50%;
+}
+
+#navigation div.active {
+    background-color: aqua;
+}
